@@ -1,0 +1,21 @@
+@using System.Reflection
+
+@{
+    var version = typeof(Duende.IdentityServer.Hosting.IdentityServerMiddleware).Assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion.Split('+').First();
+}
+
+<div class="welcome-page">
+    <h1>
+        Welcome to StepIn Authentication
+    </h1>
+
+    <ul>
+        <li>
+            Goto <a href='@TempData["FrontOfficeHomePage"]'>StepIn Home Page</a>
+
+<p>@Html.Raw(TempData["RedirectUris"])</p>
+<p>@Html.Raw(TempData["PostLogoutRedirectUris"])</p>
+        
+        </li>
+    </ul>
+</div>
